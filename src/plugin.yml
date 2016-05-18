@@ -1,0 +1,18 @@
+main: com.weebly.openboxtechnologies.hnrlevels.Main
+name: HnRLevels
+version: 1.0
+author: TechnoBrony
+description: HnR Levelling System
+commands:
+   level:
+      description: Check your level statistics.
+      usage: /<command> [argument] [player] [amount]
+   levelup:
+      description: Level up a player.
+      usage: /<command> <player>
+   leveldown:
+      description: Reduce a player's level.
+      usage: /<command> <player>
+   setlevel:
+      description: Set a player's level.
+      usage: /<command> <player> <amount>
