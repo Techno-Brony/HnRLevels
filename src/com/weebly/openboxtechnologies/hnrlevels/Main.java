@@ -5,8 +5,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -52,8 +50,6 @@ public class Main extends JavaPlugin {
             e.printStackTrace();
         }
 
-        new Listener(this);
-
         int highestLevel = (int) getConfig().get("levelxp.highestlevel");
         for (int i = 0; i < highestLevel; i++) {
             nextLevelXP.add(i, new Integer((int) getConfig().get("levelxp." + i)));
@@ -87,7 +83,7 @@ public class Main extends JavaPlugin {
     private String prefix = ChatColor.translateAlternateColorCodes('&', new String("&e&lLevel&7&l> &9"));
     private String levelprefix = ChatColor.BOLD + "" + ChatColor.GOLD;
 
-    @EventHandler
+    @Override
     public boolean onCommand(CommandSender e, Command command, String label, String[] args) {
         if (command.getName().equalsIgnoreCase("level")) {
             if (args.length == 0) {
