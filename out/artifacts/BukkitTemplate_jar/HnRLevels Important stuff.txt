@@ -1,0 +1,33 @@
+All you need to know about the levelling plugin.
+
+Uses a Database, configure the authentication in the config file in the plugin folder. You need a table called Levels with string, int, int
+
+USE MY SQL, due to a sql type specific delimiting character.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT IMPORTANT
+
+It has every feature listed in https://docs.google.com/document/d/1ENTjYpBk3mk5aqCSabTRtoEBIrw9eDwxbSYyTX-yHtw/edit
+
+EXCEPT FOR HANDLING THE LEVEL PREFIX BEHIND THE PLAYERS NAME
+I believe this should be handled instead by ChatEx not by the levelling plugin because I said so.
+
+public static void updateXPBar(Player player) Manually Updates the xp bar (You shouldn’t need to use this)
+public boolean setLevel(UUID playerid, int level, boolean notifyPlayer) Sets the level of a player
+public int getLevel(UUID playerid) Self explanatory.
+public boolean setXP(UUID playerid, int xp, boolean notifyPlayer) Sets the xp of a player, use notifyPlayer to notify the player if he levels up
+public int getXP(UUID playerid) Gets the current xp count of the uuid
+public static boolean isInteger(String str) Checks if a string can be casted to an integer
+
+Above is functions that can be accessed with :
+HnRLevels levellingPlugin = (HnRLevels)Bukkit.getPluginManager().getPlugin(“HnRLevels”);
+
+^^
+Or Something like that.
+To use the functions, you will need to reference my jar file in your project, and then you can access the public functions.
+
+BE SURE THAT IF YOU ARE ENTERING IN A UUID, THE PLAYER IS ONLINE. THE METHOD DOES NOT CHECK THAT.
+
+————————————————
+
+I haven’t been able to test out the plugin on a multiplayer platform yet, so there may be some potential issues with SQL concurrent accessing with multiple users using a command at the same time.
+
