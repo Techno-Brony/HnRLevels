@@ -46,6 +46,7 @@ public class Main extends JavaPlugin {
         try {
             openConnection();
             statement = connection.createStatement();
+statement.executeUpdate("CREATE TABLE IF NOT EXISTS Levels(UUID varchar(36), XP long, Level int);");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
