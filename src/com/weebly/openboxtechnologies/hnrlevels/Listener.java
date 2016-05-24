@@ -27,7 +27,9 @@ public class Listener implements org.bukkit.event.Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-
+        BukkitRunnable s = new BukkitRunnable() {
+            @Override
+            public void run() {
                 UUID playerid = e.getPlayer().getUniqueId();
                 ResultSet result;
                 boolean exists = false;
@@ -56,6 +58,9 @@ public class Listener implements org.bukkit.event.Listener {
                     exception.printStackTrace();
                     return;
                 }
+            }
+        };
+        s.runTaskAsynchronously(plugin);
 
         BukkitRunnable r = new BukkitRunnable() {
             @Override
