@@ -30,7 +30,7 @@ public class Listener implements org.bukkit.event.Listener {
                 ResultSet result;
                 boolean exists;
                 try {
-                    result = Main.statement.executeQuery("SELECT COUNT(UUID)" + " FROM Levels" +
+                    result = hnrlevels.statement.executeQuery("SELECT COUNT(UUID)" + " FROM Levels" +
                             " WHERE UUID ='"+ playerid.toString() +"';");
                     result.next();
                     exists = result.getInt(1) > 0;
@@ -41,14 +41,14 @@ public class Listener implements org.bukkit.event.Listener {
 
                 try {
                     if (!exists) {
-                        Main.statement.executeUpdate("INSERT INTO Levels (UUID,XP,LEVEL) VALUES ('" +
+                        hnrlevels.statement.executeUpdate("INSERT INTO Levels (UUID,XP,LEVEL) VALUES ('" +
                                 playerid.toString() + "',0,0);");
                     }
 
-                    result = Main.statement.executeQuery("SELECT * FROM Levels WHERE UUID ='"+ playerid.toString() +"';");
+                    result = hnrlevels.statement.executeQuery("SELECT * FROM Levels WHERE UUID ='"+ playerid.toString() +"';");
                     result.next();
 
-                    Main.playerXPArray.put(playerid.toString(), new int[] { result.getInt("XP"), result.getInt("LEVEL")});
+                    hnrlevels.playerXPArray.put(playerid.toString(), new int[] { result.getInt("XP"), result.getInt("LEVEL")});
 
                 } catch (SQLException exception) {
                     exception.printStackTrace();
@@ -60,7 +60,7 @@ public class Listener implements org.bukkit.event.Listener {
         BukkitRunnable r = new BukkitRunnable() {
             @Override
             public void run() {
-                Main.updateXPBar(e.getPlayer());
+                hnrlevels.updateXPBar(e.getPlayer());
             }
         };
         r.runTaskLater(plugin, 2);
@@ -76,7 +76,7 @@ public class Listener implements org.bukkit.event.Listener {
         BukkitRunnable r = new BukkitRunnable() {
             @Override
             public void run() {
-                Main.updateXPBar(e.getPlayer());
+                hnrlevels.updateXPBar(e.getPlayer());
             }
         };
         r.runTaskLater(plugin, 2);

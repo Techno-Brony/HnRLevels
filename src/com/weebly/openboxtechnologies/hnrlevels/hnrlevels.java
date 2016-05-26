@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Main extends JavaPlugin {
+public class hnrlevels extends JavaPlugin {
 
     private Connection connection;
     private String host, database, username, password;
@@ -56,7 +56,7 @@ public class Main extends JavaPlugin {
     public void onDisable() {
         for (String key : playerXPArray.keySet()) {
             try {
-                Main.statement.executeUpdate("UPDATE Levels SET XP = " + playerXPArray.get(key)[0]
+                hnrlevels.statement.executeUpdate("UPDATE Levels SET XP = " + playerXPArray.get(key)[0]
                         + ", LEVEL = '" + playerXPArray.get(key)[1] + "' WHERE UUID = '" + key + "';");
             } catch (SQLException exception ){
                 exception.printStackTrace();
