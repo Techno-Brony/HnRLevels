@@ -1,12 +1,10 @@
 package com.weebly.openboxtechnologies.hnrlevels;
 
-import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -18,20 +16,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-/**
- * Created by zhiyuanqi on 11/05/16.
- */
-
 public class Main extends JavaPlugin {
 
     private Connection connection;
     private String host, database, username, password;
     private int port;
 
-    public static Statement statement;
-    public static HashMap<String, int[]> playerXPArray = new HashMap<>();
-    public static ArrayList<Integer> nextLevelXP = new ArrayList<>();
-    public static ArrayList<Integer> mcDefaultXP = new ArrayList<>();
+    static Statement statement;
+    static HashMap<String, int[]> playerXPArray = new HashMap<>();
+    private static ArrayList<Integer> nextLevelXP = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -47,9 +40,7 @@ public class Main extends JavaPlugin {
             openConnection();
             statement = connection.createStatement();
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS Levels(UUID varchar(36), XP long, Level int);");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
@@ -57,19 +48,8 @@ public class Main extends JavaPlugin {
 
         int highestLevel = (int) getConfig().get("levelxp.highestlevel");
         for (int i = 0; i < highestLevel; i++) {
-            nextLevelXP.add(i, new Integer((int) getConfig().get("levelxp." + i)));
+            nextLevelXP.add(i, (int) getConfig().get("levelxp." + i));
         }
-
-        for (int i = 0; i < highestLevel; i++) {
-            if (i <= 16) {
-                mcDefaultXP.add(i, ((2 * i) + 7));
-            } else if (i <= 31) {
-                mcDefaultXP.add(i, ((5 * i) - 38));
-            } else {
-                mcDefaultXP.add(i, ((9 * i) - 158));
-            }
-        }
-
     }
 
     @Override
@@ -85,7 +65,7 @@ public class Main extends JavaPlugin {
         }
     }
 
-    private String prefix = ChatColor.translateAlternateColorCodes('&', new String("&e&lLevel&7&l> &9"));
+    private String prefix = ChatColor.translateAlternateColorCodes('&', "&e&lLevel&7&l> &9");
     private String levelprefix = ChatColor.BOLD + "" + ChatColor.GOLD;
 
     @EventHandler

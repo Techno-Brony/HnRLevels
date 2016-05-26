@@ -11,15 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.UUID;
 
-/**
- * Created by zhiyuanqi on 11/05/16.
- */
-
 public class Listener implements org.bukkit.event.Listener {
 
     private JavaPlugin plugin;
 
-    public Listener(JavaPlugin plugin) {
+    Listener(JavaPlugin plugin) {
 
         this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
@@ -32,7 +28,7 @@ public class Listener implements org.bukkit.event.Listener {
             public void run() {
                 UUID playerid = e.getPlayer().getUniqueId();
                 ResultSet result;
-                boolean exists = false;
+                boolean exists;
                 try {
                     result = Main.statement.executeQuery("SELECT COUNT(UUID)" + " FROM Levels" +
                             " WHERE UUID ='"+ playerid.toString() +"';");
@@ -56,7 +52,6 @@ public class Listener implements org.bukkit.event.Listener {
 
                 } catch (SQLException exception) {
                     exception.printStackTrace();
-                    return;
                 }
             }
         };
