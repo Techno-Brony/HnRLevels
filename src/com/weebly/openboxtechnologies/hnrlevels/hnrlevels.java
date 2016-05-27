@@ -1,5 +1,6 @@
 package com.weebly.openboxtechnologies.hnrlevels;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -24,7 +25,7 @@ public class hnrlevels extends JavaPlugin {
 
     static Statement statement;
     static HashMap<String, int[]> playerXPArray = new HashMap<>();
-    private static ArrayList<Integer> nextLevelXP = new ArrayList<>();
+    private ArrayList<Integer> nextLevelXP = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -312,7 +313,7 @@ public class hnrlevels extends JavaPlugin {
         }
     }
 
-    public static void updateXPBar(Player player) {
+    public void updateXPBar(Player player) {
         double percent = (double) playerXPArray.get(player.getUniqueId().toString())[0] /
                 nextLevelXP.get(playerXPArray.get(player.getUniqueId().toString())[1]);
 
@@ -338,6 +339,8 @@ public class hnrlevels extends JavaPlugin {
                     ChatColor.AQUA + level + ChatColor.BLUE + " !");
         }
 
+        LevelChangedEvent event = new LevelChangedEvent(playerid);
+        getServer().getPluginManager().callEvent(event);
         return true;
     }
 
@@ -364,7 +367,7 @@ public class hnrlevels extends JavaPlugin {
         return playerXPArray.get(playerid.toString())[0];
     }
 
-    public static boolean isInteger(String str) {
+    public boolean isInteger(String str) {
         if (str == null) {
             return false;
         }
