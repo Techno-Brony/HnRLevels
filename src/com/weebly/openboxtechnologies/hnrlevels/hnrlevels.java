@@ -309,8 +309,6 @@ public class hnrlevels extends JavaPlugin {
                 return;
             }
             Class.forName("com.mysql.jdbc.Driver");
-            String test = "jdbc:mysql://" + host+ ":" + port + "/" + database + username + password;
-            getLogger().info(test);
             connection = DriverManager.getConnection("jdbc:mysql://" + host+ ":" + port + "/" + database, username, password);
         }
     }
