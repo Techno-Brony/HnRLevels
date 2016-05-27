@@ -25,7 +25,7 @@ public class hnrlevels extends JavaPlugin {
 
     static Statement statement;
     static HashMap<String, int[]> playerXPArray = new HashMap<>();
-    private ArrayList<Integer> nextLevelXP = new ArrayList<>();
+    private static ArrayList<Integer> nextLevelXP = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -313,7 +313,7 @@ public class hnrlevels extends JavaPlugin {
         }
     }
 
-    public void updateXPBar(Player player) {
+    public static void updateXPBar(Player player) {
         double percent = (double) playerXPArray.get(player.getUniqueId().toString())[0] /
                 nextLevelXP.get(playerXPArray.get(player.getUniqueId().toString())[1]);
 

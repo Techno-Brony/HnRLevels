@@ -7,10 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92d0add7-484a-4f55-936f-ad951e84110c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/LevelChangedEvent.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HnRLevels/com/weebly/openboxtechnologies/hnrlevels/Listener$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HnRLevels/com/weebly/openboxtechnologies/hnrlevels/Listener$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/HnRLevels/com/weebly/openboxtechnologies/hnrlevels/Listener.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/hnrlevels.java" afterPath="$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/hnrlevels.java" />
     </list>
@@ -47,8 +43,8 @@
       <file leaf-file-name="Listener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/Listener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+            <state relative-caret-position="165">
+              <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding>
                 <element signature="e#2214#2215#0" expanded="true" />
                 <element signature="e#2282#2283#0" expanded="true" />
@@ -60,11 +56,11 @@
       <file leaf-file-name="hnrlevels.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/hnrlevels.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
               <folding>
+                <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
                 <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-                <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
                 <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
                 <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
                 <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -160,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,9 +209,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -504,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1464320669444</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Removed static stuff, Added event for when level has been changed.">
+      <created>1464321867441</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464321867441</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -553,7 +556,8 @@
     <MESSAGE value="Optimized code." />
     <MESSAGE value="Modified Main Class for easy integration into other plugins." />
     <MESSAGE value="Added function to get amount of levels for generating config file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added function to get amount of levels for generating config file." />
+    <MESSAGE value="Removed static stuff, Added event for when level has been changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed static stuff, Added event for when level has been changed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -572,8 +576,8 @@
         <state relative-caret-position="405">
           <caret line="79" column="30" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="30" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -612,8 +616,8 @@
         <state relative-caret-position="390">
           <caret line="77" column="30" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="30" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -652,8 +656,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -692,8 +696,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -732,8 +736,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -772,8 +776,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -812,8 +816,8 @@
         <state relative-caret-position="690">
           <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
@@ -896,25 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/Listener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
-          <folding>
-            <element signature="e#2214#2215#0" expanded="true" />
-            <element signature="e#2282#2283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/LevelChangedEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -932,13 +917,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/Listener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#2214#2215#0" expanded="true" />
+            <element signature="e#2282#2283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/weebly/openboxtechnologies/hnrlevels/hnrlevels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="296" column="0" selection-start-line="296" selection-start-column="0" selection-end-line="296" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
           <folding>
+            <element signature="method#createConfig#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#openConnection#0;class#hnrlevels#0" expanded="false" />
-            <element signature="method#updateXPBar#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setLevel#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#setXP#0;class#hnrlevels#0" expanded="false" />
             <element signature="method#isInteger#0;class#hnrlevels#0" expanded="false" />
