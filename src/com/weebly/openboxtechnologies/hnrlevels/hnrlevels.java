@@ -387,4 +387,8 @@ public class hnrlevels extends JavaPlugin {
         }
         return true;
     }
+
+    public int getAmountOfLevels() {
+        return nextLevelXP.size();
+    }
 }
