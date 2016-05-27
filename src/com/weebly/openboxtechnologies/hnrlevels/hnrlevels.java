@@ -40,18 +40,18 @@ public class hnrlevels extends JavaPlugin {
         try {
             openConnection();
             statement = connection.createStatement();
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Levels(UUID varchar(36), XP long, Level int);");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Levels(UUID varchar(36), XP long, LEVEL int);");
+
+            new Listener(this);
+
+            int highestLevel = (int) getConfig().get("levelxp.highestlevel");
+            for (int i = 0; i < highestLevel; i++) {
+                nextLevelXP.add(i, (int) getConfig().get("levelxp." + i));
+            }
         } catch (ClassNotFoundException | SQLException e) {
             getLogger().severe("Unable to perform SQL connection. Please check your config files.");
-            getLogger().severe("HnRChat is disabling ...");
+            getLogger().severe("HnRLevels is disabling ...");
             getServer().getPluginManager().disablePlugin(this);
-        }
-
-        new Listener(this);
-
-        int highestLevel = (int) getConfig().get("levelxp.highestlevel");
-        for (int i = 0; i < highestLevel; i++) {
-            nextLevelXP.add(i, (int) getConfig().get("levelxp." + i));
         }
     }
 

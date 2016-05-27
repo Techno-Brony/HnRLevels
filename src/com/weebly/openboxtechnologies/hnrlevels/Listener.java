@@ -53,17 +53,16 @@ public class Listener implements org.bukkit.event.Listener {
                 } catch (SQLException exception) {
                     exception.printStackTrace();
                 }
+                BukkitRunnable r = new BukkitRunnable() {
+                    @Override
+                    public void run() {
+                        hnrlevels.updateXPBar(e.getPlayer());
+                    }
+                };
+                r.runTaskLater(plugin, 2);
             }
         };
         s.runTaskAsynchronously(plugin);
-
-        BukkitRunnable r = new BukkitRunnable() {
-            @Override
-            public void run() {
-                hnrlevels.updateXPBar(e.getPlayer());
-            }
-        };
-        r.runTaskLater(plugin, 2);
     }
 
     @EventHandler
