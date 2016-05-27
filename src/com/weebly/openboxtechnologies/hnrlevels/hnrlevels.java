@@ -42,7 +42,9 @@ public class hnrlevels extends JavaPlugin {
             statement = connection.createStatement();
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS Levels(UUID varchar(36), XP long, Level int);");
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+            getLogger().severe("Unable to perform SQL connection. Please check your config files.");
+            getLogger().severe("HnRChat is disabling ...");
+            getServer().getPluginManager().disablePlugin(this);
         }
 
         new Listener(this);
